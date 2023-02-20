@@ -1,0 +1,16 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/weatherforecast", //denotes the route of the actual endpoint in the Microservice.
+      "DownstreamScheme": "https", //is the scheme of the Microservice, here it is HTTPS
+      "DownstreamHostAndPorts": [ //defines the location of the Microservice. We will add the host and port number here.
+        {
+          "Host": "localhost",
+          "Port": 44301
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product", //is the path at which the client will request the Ocelot API Gateway.
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    }
+  ]
+}
